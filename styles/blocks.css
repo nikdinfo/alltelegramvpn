@@ -47,6 +47,10 @@
     color: var(--primary-color);
 }
 
+.burger-menu {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
     padding-top: 160px;

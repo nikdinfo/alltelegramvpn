@@ -1,10 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (burgerMenu) {
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+    }
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                burgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    });
+
     const userCountElement = document.getElementById('user-count');
-    
+
     if (userCountElement) {
         // Initial count
         let count = 63019;
-        
+
         // Retrieve count from local storage to simulate persistence during session navigation
         const storedCount = localStorage.getItem('vpnUserCount');
         const lastUpdate = localStorage.getItem('vpnLastUpdate');
@@ -16,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const formatter = new Intl.NumberFormat('ru-RU');
-        
+
         const updateDisplay = () => {
-             userCountElement.textContent = formatter.format(count);
-             userCountElement.classList.add('pulse-text');
-             setTimeout(() => userCountElement.classList.remove('pulse-text'), 300);
+            userCountElement.textContent = formatter.format(count);
+            userCountElement.classList.add('pulse-text');
+            setTimeout(() => userCountElement.classList.remove('pulse-text'), 300);
         };
 
         updateDisplay();
@@ -28,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Increment logic
         setInterval(() => {
             // Random increment between 0 and 2 to look natural but growing
-            const increment = Math.random() > 0.3 ? 1 : 0; 
-            
+            const increment = Math.random() > 0.3 ? 1 : 0;
+
             if (increment > 0) {
                 count += increment;
                 updateDisplay();
-                
+
                 // Save state
                 localStorage.setItem('vpnUserCount', count);
                 localStorage.setItem('vpnLastUpdate', Date.now());
