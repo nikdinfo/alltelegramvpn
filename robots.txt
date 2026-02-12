@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alltelegramvpn.ru/sitemap.xml

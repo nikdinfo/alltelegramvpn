@@ -1,0 +1,95 @@
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .problem-grid,
+    .advantages-grid,
+    .tariffs-grid,
+    .platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .step-item {
+        flex: 0 0 45%;
+        margin-bottom: 40px;
+    }
+
+    .locations-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .locations-grid {
+        justify-content: center;
+    }
+
+    .locations-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .header .container {
+        padding: 0 16px;
+    }
+
+    .nav-menu {
+        display: none;
+        /* Logic for mobile menu needed or just simplified links */
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .tariff-card.popular {
+        transform: scale(1);
+    }
+
+    .tariff-card.popular:hover {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .problem-grid,
+    .advantages-grid,
+    .tariffs-grid,
+    .platforms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .step-item {
+        flex: 0 0 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
