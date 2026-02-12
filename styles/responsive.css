@@ -38,15 +38,18 @@
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 60px 0;
+        --section-padding: 40px 0;
+        /* Reduced from 60px */
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        /* Reduced from 2.5rem */
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        /* Reduced from 2rem */
     }
 
     .header .container {
@@ -55,11 +58,17 @@
 
     .nav-menu {
         display: none;
-        /* Logic for mobile menu needed or just simplified links */
     }
 
     .hero {
-        padding-top: 120px;
+        padding-top: 100px;
+        /* Reduced from 120px */
+        padding-bottom: 60px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
     }
 
     .tariff-card.popular {
@@ -72,12 +81,18 @@
 }
 
 @media (max-width: 600px) {
+    :root {
+        --section-padding: 30px 0;
+        /* Further reduced */
+    }
 
     .problem-grid,
     .advantages-grid,
     .tariffs-grid,
     .platforms-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        /* Reduced gap */
     }
 
     .footer-content {
@@ -87,9 +102,50 @@
 
     .step-item {
         flex: 0 0 100%;
+        margin-bottom: 24px;
+        /* Reduced margin */
+        padding: 20px;
+        /* Add internal padding reduction if needed, but margin helps compaction */
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        /* Further reduced */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Reduce internal padding of cards */
+    .problem-card,
+    .advantage-card,
+    .tariff-card,
+    .platform-card,
+    .reviews-section>.container>div>div {
+        /* Review cards selector approach */
+        padding: 20px !important;
+    }
+
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 1rem;
+        width: 100%;
+        /* Full width buttons on mobile usually look better/compact */
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+
+    .status-panel {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .status-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 }
